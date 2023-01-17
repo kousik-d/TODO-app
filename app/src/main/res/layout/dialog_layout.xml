@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding = "20dp">
+
+    <EditText
+        android:id="@+id/editText_heading"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint ="Heading"
+        android:inputType ="text" />
+
+    <EditText
+        android:id="@+id/editText_text"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/editText_heading"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Activiy"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/addbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="ADD" />
+
+</RelativeLayout>
