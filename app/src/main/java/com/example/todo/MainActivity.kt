@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 class MainActivity : AppCompatActivity() {
     private val todolist : MutableList<tododata> = mutableListOf()
     private val adapter = todoadapter(todolist)
+    private var itemclicked = adapter.clicked
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,6 +31,11 @@ class MainActivity : AppCompatActivity() {
         adapter.notifyDataSetChanged()
     }
     fun itemDelete(view :View){
+        for(i in itemclicked) {
+            todolist.removeAt(i)
+        }
+        adapter.notifyDataSetChanged()
+        /*
         if(todolist.size == 0){
             Toast.makeText(this,"Enter the data",Toast.LENGTH_SHORT).show()
         }else {
@@ -37,6 +43,8 @@ class MainActivity : AppCompatActivity() {
             todolist.removeAt(0)
             adapter.notifyDataSetChanged()
         }
+
+         */
     }
     fun CreateDialog(){
             //Dialog Inflate

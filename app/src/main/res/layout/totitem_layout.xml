@@ -11,7 +11,7 @@
 
          <TextView
              android:id="@+id/heading_text"
-             android:layout_width="match_parent"
+             android:layout_width="309dp"
              android:layout_height="wrap_content"
              android:text="TODO Heading"
              android:textAllCaps="true"
@@ -25,6 +25,13 @@
              android:text="TODO Text"
              android:textSize="16sp"
              />
+
+         <CheckBox
+             android:id="@+id/check"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="35dp"
+             android:layout_toEndOf="@+id/heading_text" />
 
      </RelativeLayout>
 

@@ -3,14 +3,17 @@ package com.example.todo
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class todoadapter(val todolist :MutableList<tododata>):RecyclerView.Adapter<todoadapter.todoviewHolder>() {
 
+      var clicked:MutableList<Int> = mutableListOf()
     inner class todoviewHolder(itemview: View ): RecyclerView.ViewHolder(itemview){
         val txt1:TextView = itemview.findViewById(R.id.heading_text)
         val txt2:TextView = itemview.findViewById(R.id.Activity_text)
+        val clk:CheckBox = itemview.findViewById(R.id.check)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): todoviewHolder {
@@ -24,5 +27,9 @@ class todoadapter(val todolist :MutableList<tododata>):RecyclerView.Adapter<todo
         val curr = todolist[position]
         holder.txt1.text = curr.todoHead.toString()
         holder.txt2.text = curr.todoActivity.toString()
+        if (holder.clk.isChecked == true) {
+            clicked.add(position)
+        }
     }
+
 }
